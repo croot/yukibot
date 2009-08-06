@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import urllib2
-import urllib
+#import urllib
 import xml.parsers.expat
-import sys
+#import sys
 import chardet
 
 class weather_informer():
@@ -120,14 +120,14 @@ class weather_informer():
 
         self.parse()
         if self.service_error == True:
-            return "Ошибка сервиса. Проверьте имя города."
+            return u"Ошибка сервиса. Проверьте имя города."
 
         if (argument == "now") or (argument == None):
-            return informer.show_weather_now()
+            return self.show_weather_now()
         elif argument == "tomorrow":
-            return informer.show_weather_tomorrow()
+            return self.show_weather_tomorrow()
         elif argument == "forecast":
-            return informer.show_weather_forecast()
+            return self.show_weather_forecast()
         else:
             return "Oops!"
 
@@ -135,8 +135,8 @@ class weather_informer():
 
 
 ##########################################
-informer = weather_informer(u"tokyo",u"ru")
-print informer.weather()
+#informer = weather_informer(u"tokyo",u"ru")
+#print informer.weather()
 
 ###########################################
 """

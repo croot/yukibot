@@ -7,6 +7,7 @@ import os
 import time
 from func import get_local_time
 sys.path.append("../addons")
+from weather import weather_informer
 #import thread
 #import threading
 
@@ -104,13 +105,14 @@ class bot():
 
         #print argument;
         #TODO: перенести список команд в инит
-        commands_list = [u"echo",u"exit",u"хуита",u"about","say_conf","count"]
+        commands_list = [u"echo",u"exit",u"хуита",u"about",u"say_conf",u"count",u"weather"]
         commands_dict = {
             u"echo":self.command_echo,
             u"exit":self.command_exit,
             u"about":self.command_about,
             u"say_conf":self.command_say_conf,
-            u"count":self.command_count}
+            u"count":self.command_count,
+            u"weather":self.command_weather}
 
         #Ищем команду в списке, выполняем. Если нет - посылаем.
         for task in commands_list:
@@ -175,7 +177,10 @@ class bot():
             time.sleep(1)
 
     def command_weather(self,sender,argument,mtype):
-        pass
+        informer = weather_informer(u"tokyo",u"ru")
+        #print informer.weather()
+        self.send(sender,unicode(informer.weather()),mtype)
+    
 
 
 
