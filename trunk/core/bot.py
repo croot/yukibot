@@ -29,6 +29,7 @@ class bot():
         self.name = u"yuki"
 
     def connect(self):
+        """test"""
         if self.client.connect() != 0:
             print "Can not connect"
 

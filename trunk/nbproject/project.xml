@@ -7,7 +7,6 @@
             <sources>
                 <root id="src.addons.dir"/>
                 <root id="src.core.dir"/>
-                <root id="src.SVN.dir"/>
             </sources>
             <tests/>
         </data>
