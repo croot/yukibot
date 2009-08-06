@@ -130,6 +130,17 @@ class bot():
             return 0
 
 
+    def process_presence(self,conn,msg):
+        msg_type = unicode(msg.getType())
+        sender = unicode(msg.getFrom())
+        presence = sender + u" " + msg_type
+        print presence
+
+
+    def process_disconnect(self):
+        print u"Потеряно соединение, переподключаюсь"
+        self.connect()
+        self.auth()
 
 
 
@@ -147,17 +158,6 @@ class bot():
         self.send(sender, u"Прощайте!",mtype)
         self.running = False
 
-    def process_presence(self,conn,msg):
-        msg_type = unicode(msg.getType())
-        sender = unicode(msg.getFrom())
-        presence = sender + u" " + msg_type
-        print presence
-
-
-    def process_disconnect(self):
-        print u"Потеряно соединение, переподключаюсь"
-        self.connect()
-        self.auth()
 
     def command_about(self,sender,argument,mtype):
         self.send(sender,"Юки-бот, версия 0.1 \n"+"Автор: Антон Мельников \n"+"Вступайте и компилируйте! \n"+"В месте мы сила!",mtype)
