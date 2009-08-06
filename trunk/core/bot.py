@@ -6,7 +6,9 @@ import xmpp
 import os
 import time
 from func import get_local_time
-
+sys.path.append("../addons")
+#import thread
+#import threading
 
 class bot():
     def __init__(self):
@@ -172,7 +174,8 @@ class bot():
             i = i - 1
             time.sleep(1)
 
-
+    def command_weather(self,sender,argument,mtype):
+        pass
 
 
 
