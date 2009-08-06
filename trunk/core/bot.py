@@ -3,13 +3,13 @@
 #Главный класс бота
 import sys
 import xmpp
-import os
 import time
 from func import get_local_time
 sys.path.append("../addons")
 from weather import weather_informer
 #import thread
 #import threading
+import commandos
 
 class bot():
     def __init__(self):
@@ -42,8 +42,10 @@ class bot():
     def send(self,recipient,msg,mtype):
         self.client.send(xmpp.protocol.Message(recipient,msg,mtype))
 
+
     def disconnect(self):
         self.client.disconnect()
+
 
     def process_message(self,conn,msg):
         #Сбрасываем команду
@@ -56,7 +58,6 @@ class bot():
         # Игнорируем сообщения из прошлого
         if timestamp < self.connect_time:
             return 0
-
 
         #Корректируем отправителя в зависимости от типа сообщения
         if mtype == u"groupchat":
@@ -112,7 +113,7 @@ class bot():
             u"about":self.command_about,
             u"say_conf":self.command_say_conf,
             u"count":self.command_count,
-            u"weather":self.command_weather}
+            u"weather":commandos.command_weather}
 
         #Ищем команду в списке, выполняем. Если нет - посылаем.
         for task in commands_list:
@@ -123,7 +124,7 @@ class bot():
                 function = commands_dict.get(command)
                 #Проверяем функцию на вызываемость и вызываем её
                 if callable(function):
-                    function(sender,argument,mtype)
+                    function(self,sender,argument,mtype)
                 break
         else:
             #self.send(sender, u"Команда не найдена")
@@ -138,6 +139,7 @@ class bot():
 
 
     def process_disconnect(self):
+        #TODO: Разобраться  как следует с дисконнектом
         print u"Потеряно соединение, переподключаюсь"
         self.connect()
         self.auth()
@@ -165,7 +167,6 @@ class bot():
     def command_say_conf(self,sender,argument,mtype):
         conference = "yukibottest@conference.jabber.ru"
         self.send(conference,argument,"groupchat")
-        print "debug"
 
 
     def command_count(self,sender,argument,mtype):
@@ -175,13 +176,12 @@ class bot():
             self.send(conference,unicode(i),"groupchat")
             i = i - 1
             time.sleep(1)
-
+"""
     def command_weather(self,sender,argument,mtype):
         informer = weather_informer(u"tokyo",u"ru")
         #print informer.weather()
         self.send(sender,unicode(informer.weather()),mtype)
     
-
-
+"""
 
 
