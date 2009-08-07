@@ -131,32 +131,3 @@ class weather_informer():
         else:
             return "Oops!"
 
-
-
-
-##########################################
-#informer = weather_informer(u"tokyo",u"ru")
-#print informer.weather()
-
-###########################################
-"""
-print informer.weather_now
-print informer.weather_forecast
-#print "HUITA", informer.i
-for element in informer.weather_now:
-    print informer.weather_now[element]
-for huita in xrange(4):
-    print "---------------------------"
-    for element in informer.weather_forecast[huita]:
-        print informer.weather_forecast[huita][element]
-
-print "###############################"
-print informer.weather_forecast
-
-print "###############################"
-print informer.show_weather_now()
-print "###############################"
-print informer.show_weather_tomorrow()
-print "###############################"
-print informer.show_weather_forecast()
-"""
