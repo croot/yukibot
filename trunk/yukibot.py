@@ -7,7 +7,9 @@ import time
 sys.path.append("./core")
 from bot import bot
 #from func import get_local_time
-
+sys.path.append("./addons")
+#from weather import weather_informer
+import weather
 
 def main():
     print "init..."
@@ -28,7 +30,9 @@ def main():
     presence = xmpp.Presence(to=room)
     #presence.setTag('x',namespace=xmpp.NS_MUC).setTagData('password','helloandwelcome')
     yuki.client.send(presence)
-
+    #TODO: Сделать функцию изменения статуса
+    pres=xmpp.Presence(priority=5, show='available',status=u"Привет, мир!")
+    yuki.client.send(pres)
 
     # Main cycle
     while yuki.running == True:
