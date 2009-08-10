@@ -138,3 +138,10 @@ class bot():
         print u"Потеряно соединение, переподключаюсь"
         self.connect()
         self.auth()
+
+    def set_status(self,show,status):
+        #TODO: WTF is priority?!
+        priority = 5
+        #Индусокод, но щто поделать ^_^
+        pres = xmpp.Presence(priority = priority, show = show, status = status)
+        self.client.send(pres)

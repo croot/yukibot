@@ -26,7 +26,7 @@ class allcommands():
 
 
 def command_weather(bot,sender,argument,mtype):
-    informer = weather_informer(u"tokyo",u"ru")
+    informer = weather_informer(u"moscow",u"ru")
     #print informer.weather()
     bot.send(sender,unicode(informer.weather()),mtype)
 
