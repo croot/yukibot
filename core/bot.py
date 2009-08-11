@@ -12,6 +12,7 @@ sys.path.append("./addons")
 #import threading
 import commandos
 import weather
+import codecs
 
 class bot():
     def __init__(self):
@@ -61,7 +62,9 @@ class bot():
         # Игнорируем сообщения из прошлого
         if timestamp < self.connect_time:
             return 0
-
+        #Пишем сообщение в лог
+        log_message = unicode(timestamp+u" "+sender+u" "+text+"\n")
+        self.write_log(log_message)
         #Корректируем отправителя в зависимости от типа сообщения
         if mtype == u"groupchat":
             sender = "yukibottest@conference.jabber.ru"
@@ -145,3 +148,15 @@ class bot():
         #Индусокод, но щто поделать ^_^
         pres = xmpp.Presence(priority = priority, show = show, status = status)
         self.client.send(pres)
+
+    def write_log(self,message):
+        try:
+            logfile = codecs.open("log.txt", "a","utf-8")
+            try:
+                logfile.write(message)
+            finally:
+                logfile.close()
+        except IOError, error:
+            print error
+            pass
+
