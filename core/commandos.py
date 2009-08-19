@@ -10,14 +10,17 @@ from weather import weather_informer
 
 class allcommands():
     def __init__(self):
-        self.commands_list = [u"echo",u"exit",u"хуита",u"about",u"say_conf",u"count",u"weather"]
+        self.commands_list = [u"echo",u"exit",u"хуита",u"about",
+        u"say_conf",u"count",u"weather", u"control"]
         self.commands_dict = {
             u"echo":command_echo,
             u"exit":command_exit,
             u"about":command_about,
             u"say_conf":command_say_conf,
             u"count":command_count,
-            u"weather":command_weather}
+            u"weather":command_weather,
+            u"control":command_control}
+
 
 
 
@@ -26,7 +29,7 @@ class allcommands():
 
 
 def command_weather(bot,sender,argument,mtype):
-    informer = weather_informer(u"moscow",u"ru")
+    informer = weather.weather_informer(u"moscow",u"ru")
     #print informer.weather()
     bot.send(sender,unicode(informer.weather()),mtype)
 
@@ -55,4 +58,12 @@ def command_count(bot,sender,argument,mtype):
         i = i - 1
         time.sleep(1)
 
-
+def command_control(bot,sender,argument,mtype):
+    if argument == u"on":
+        bot.set_priority(0)
+        bot.controlled = True
+    elif argument == u"off":
+        bot.set_priority(9000)
+        bot.controlled = False
+    else:
+        pass
