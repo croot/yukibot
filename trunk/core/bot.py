@@ -30,7 +30,8 @@ class bot():
         #Запоминаем время подключения
         self.connect_time = get_local_time()
         self.name = u"yuki"
-
+        #Еще свойства
+        self.controlled = False
     def connect(self):
         """test"""
         if self.client.connect() != 0:
@@ -62,6 +63,7 @@ class bot():
         # Игнорируем сообщения из прошлого
         if timestamp < self.connect_time:
             return 0
+        #TODO: Переделать систему логирования
         #Пишем сообщение в лог
         log_message = unicode(timestamp+u" "+sender+u" "+text+"\n")
         self.write_log(log_message)
@@ -130,6 +132,7 @@ class bot():
 
     def process_presence(self,conn,msg):
         #TODO: Разобраться с этой хренью!
+        #Думаю, эту хрень можно использовать с большей пользой
         msg_type = unicode(msg.getType())
         sender = unicode(msg.getFrom())
         presence = sender + u" " + msg_type
@@ -160,3 +163,6 @@ class bot():
             print error
             pass
 
+    def set_priority(self,priority):
+        pres = xmpp.Presence(priority = priority)
+        self.client.send(pres)
