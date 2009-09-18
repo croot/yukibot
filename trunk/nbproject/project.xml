@@ -5,8 +5,6 @@
         <data xmlns="http://nbpython.dev.java.net/ns/php-project/1">
             <name>yukibot</name>
             <sources>
-                <root id="src.addons.dir"/>
-                <root id="src.core.dir"/>
                 <root id="src.trunk.dir"/>
             </sources>
             <tests/>
