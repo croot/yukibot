@@ -101,3 +101,5 @@ None 294023869@icq.jabber.tsure.ru None
 None 294023869@icq.jabber.tsure.ru #weather
 None 373689585@icq.jabber.tsure.ru weather
 None 373689585@icq.jabber.tsure.ru weather
+None 294023869@icq.jabber.tsure.ru None
+None 294023869@icq.jabber.tsure.ru None
