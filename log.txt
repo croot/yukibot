@@ -92,3 +92,12 @@ None nhkproject@jabber.ru/Gajim weather
 None yukibottest@conference.jabber.ru/Scanner-kun hello
 None yukibottest@conference.jabber.ru/Scanner-kun howdy
 None yukibottest@conference.jabber.ru/Scanner-kun weather
+None 294023869@icq.jabber.tsure.ru None
+None 294023869@icq.jabber.tsure.ru None
+None 373689585@icq.jabber.tsure.ru weather
+None 294023869@icq.jabber.tsure.ru #exit
+None 294023869@icq.jabber.tsure.ru None
+None 294023869@icq.jabber.tsure.ru None
+None 294023869@icq.jabber.tsure.ru #weather
+None 373689585@icq.jabber.tsure.ru weather
+None 373689585@icq.jabber.tsure.ru weather
