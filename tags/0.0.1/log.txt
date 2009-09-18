@@ -1,0 +1,105 @@
+None 373689585@icq.jabber.tsure.ru gso
+None 373689585@icq.jabber.tsure.ru пыщ
+None 373689585@icq.jabber.tsure.ru #weather
+None 373689585@icq.jabber.tsure.ru weather
+None 373689585@icq.jabber.tsure.ru weather
+None yukibottest@conference.jabber.ru/Scanner-kun #control
+None yukibottest@conference.jabber.ru/Scanner-kun #control on
+None yukibottest@conference.jabber.ru/Scanner-kun #control off
+None yukibottest@conference.jabber.ru/Scanner-kun #weather
+None yukibottest@conference.jabber.ru/yuki Прогноз погоды на сегодня: 
+Температура: 18°C 
+Сплошная облачность
+Влажность: 73 %
+Ветер: С, 0 м/с
+
+None yukibottest@conference.jabber.ru/Scanner-kun #control on
+None yukibottest@conference.jabber.ru/Scanner-kun #weather
+None yukibottest@conference.jabber.ru/yuki Прогноз погоды на сегодня: 
+Температура: 18°C 
+Сплошная облачность
+Влажность: 73 %
+Ветер: С, 0 м/с
+
+None yukibottest@conference.jabber.ru/Scanner-kun weather
+None yukibottest@conference.jabber.ru/Scanner-kun about
+None yukibottest@conference.jabber.ru/Scanner-kun control off
+None yukibottest@conference.jabber.ru/Scanner-kun control off
+None yukibottest@conference.jabber.ru/Scanner-kun control on
+None yukibottest@conference.jabber.ru/Scanner-kun #control off
+None nhkproject@jabber.ru/Gajim #weather
+None nhkproject@jabber.ru/Gajim #control on
+None yukibottest@conference.jabber.ru/Scanner-kun weather
+None yukibottest@conference.jabber.ru/Scanner-kun fasdfsaf
+None yukibottest@conference.jabber.ru/Scanner-kun control off
+None yukibottest@conference.jabber.ru/Scanner-kun control on
+None yukibottest@conference.jabber.ru/Scanner-kun controll off
+None yukibottest@conference.jabber.ru/Scanner-kun control off
+None yukibottest@conference.jabber.ru/Scanner-kun #weather
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None yukibottest@conference.jabber.ru/Scanner-kun dsfdsf
+None yukibottest@conference.jabber.ru/Scanner-kun asdf
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim sadfsdaf
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim #weather
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim sdfdsf
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim #weather
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim weather
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim weather
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim None
+None nhkproject@jabber.ru/Gajim control off
+None nhkproject@jabber.ru/Gajim control on
+None nhkproject@jabber.ru/Gajim #weather
+None nhkproject@jabber.ru/Gajim weather
+None yukibottest@conference.jabber.ru/Scanner-kun hello
+None yukibottest@conference.jabber.ru/Scanner-kun howdy
+None yukibottest@conference.jabber.ru/Scanner-kun weather
+None 294023869@icq.jabber.tsure.ru None
+None 294023869@icq.jabber.tsure.ru None
+None 373689585@icq.jabber.tsure.ru weather
+None 294023869@icq.jabber.tsure.ru #exit
+None 294023869@icq.jabber.tsure.ru None
+None 294023869@icq.jabber.tsure.ru None
+None 294023869@icq.jabber.tsure.ru #weather
+None 373689585@icq.jabber.tsure.ru weather
+None 373689585@icq.jabber.tsure.ru weather
+None 294023869@icq.jabber.tsure.ru None
+None 294023869@icq.jabber.tsure.ru None
