@@ -11,7 +11,7 @@ sys.path.append("./addons")
 #import thread
 #import threading
 import commandos
-import weather
+#import weather
 import codecs
 
 class bot():
@@ -32,6 +32,8 @@ class bot():
         self.name = u"yuki"
         #Еще свойства
         self.controlled = False
+
+
     def connect(self):
         """test"""
         if self.client.connect() != 0:
@@ -55,19 +57,25 @@ class bot():
     def process_message(self,conn,msg):
         #Сбрасываем команду
         command = None
+
         #Опеределяем отправителя, текст сообщения, время и тип
         sender = unicode(msg.getFrom())
         text = unicode(msg.getBody())
         timestamp = unicode(msg.getTimestamp())
         mtype = unicode(msg.getType())
+
         # Игнорируем сообщения из прошлого
         if timestamp < self.connect_time:
             return 0
-        #TODO: Переделать систему логирования
+
         #Пишем сообщение в лог
+        #TODO: Сделать _нормальную_ систему логирования!
         log_message = unicode(timestamp+u" "+sender+u" "+text+"\n")
         self.write_log(log_message)
+
         #Корректируем отправителя в зависимости от типа сообщения
+        #Т.е. чтобы из конференции приходили в конференцию сообщения
+        #Переделать sender'a изменяемым
         if mtype == u"groupchat":
             sender = "yukibottest@conference.jabber.ru"
         elif mtype == u"chat":
@@ -112,9 +120,10 @@ class bot():
         except:
             argument = None
 
+        #Получаем список всех комманд
         com = commandos.allcommands()
 
-        #Ищем команду в списке, выполняем. Если нет - посылаем.
+        #Ищем команду в списке, выполняем. Если нет - ничего не делаем.
         for task in com.commands_list:
             if command == task:
                 #self.send(sender, u"Принята команда " + command,mtype)
@@ -146,13 +155,13 @@ class bot():
         self.auth()
 
     def set_status(self,show,status):
-        #TODO: WTF is priority?!
         priority = 5
         #Индусокод, но щто поделать ^_^
         pres = xmpp.Presence(priority = priority, show = show, status = status)
         self.client.send(pres)
 
     def write_log(self,message):
+        """Простая функция записи сообщений в лог"""
         try:
             logfile = codecs.open("log.txt", "a","utf-8")
             try:
@@ -161,7 +170,6 @@ class bot():
                 logfile.close()
         except IOError, error:
             print error
-            pass
 
     def set_priority(self,priority):
         pres = xmpp.Presence(priority = priority)

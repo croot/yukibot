@@ -29,6 +29,7 @@ def main():
     room = "yukibottest@conference.jabber.ru/yuki"
     print "Joining " + room
     presence = xmpp.Presence(to=room)
+    #Закомментированная строка нужна для подключения к конференциям с паролем.
     #presence.setTag('x',namespace=xmpp.NS_MUC).setTagData('password','helloandwelcome')
     yuki.client.send(presence)
     #Начальный статус

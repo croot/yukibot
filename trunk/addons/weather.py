@@ -93,7 +93,7 @@ class weather_informer():
         hum = self.weather_now[u'humidity'] + u"\n"
         wind = self.weather_now[u'wind_condition'] + u"\n"
         cond = self.weather_now[u'condition'] + u"\n"
-        return title+temp+cond+hum+wind
+        return title + temp + cond + hum + wind
 
     def show_weather_tomorrow(self):
         title = u"Прогноз погоды на завтра: \n"
