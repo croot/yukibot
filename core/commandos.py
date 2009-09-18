@@ -8,6 +8,9 @@ import weather
 #import bot
 from weather import weather_informer
 
+
+
+'''
 class allcommands():
     def __init__(self):
         self.commands_list = [u"echo",u"exit",u"хуита",u"about",
@@ -21,6 +24,7 @@ class allcommands():
             u"weather":command_weather,
             u"control":command_control}
 
+'''
 
 
 
@@ -67,3 +71,17 @@ def command_control(bot,sender,argument,mtype):
         bot.controlled = False
     else:
         pass
+
+
+
+
+
+
+
+commands_dict = {u"echo":command_echo,
+    u"exit":command_exit,
+    u"about":command_about,
+    u"say_conf":command_say_conf,
+    u"count":command_count,
+    u"weather":command_weather,
+    u"control":command_control}

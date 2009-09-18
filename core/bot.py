@@ -5,6 +5,7 @@ import sys
 import xmpp
 import time
 from func import get_local_time
+from time import strftime
 
 sys.path.append("./addons")
 #from weather import weather_informer
@@ -70,12 +71,12 @@ class bot():
 
         #Пишем сообщение в лог
         #TODO: Сделать _нормальную_ систему логирования!
-        log_message = unicode(timestamp+u" "+sender+u" "+text+"\n")
-        self.write_log(log_message)
+        #log_message = unicode(timestamp+u" "+sender+u" "+text+"\n")
+        #self.write_log(log_message)
 
         #Корректируем отправителя в зависимости от типа сообщения
         #Т.е. чтобы из конференции приходили в конференцию сообщения
-        #Переделать sender'a изменяемым
+        #TODO Сделать sender'a изменяемым
         if mtype == u"groupchat":
             sender = "yukibottest@conference.jabber.ru"
         elif mtype == u"chat":
@@ -84,52 +85,55 @@ class bot():
             return 0
 
 
-        #Маркеры команд - имя бота и решетка
-        #TODO: Объеденить поиск маркеров и их удаление
+        #Маркер команд - первый символ решетка #
 
-        #Игнорируем сообщения без маркеров в групчате
-        if ((mtype == u"groupchat") and not( (text[0] == u"#") or ( text[0:len(self.name)] == self.name))):
+        #Временный костыль для записи истории в конференции
+        #TODO: Костыль убрать. Когда-нибудь :)
+        if mtype == u"groupchat":
+            log_message = unicode(strftime("%Y-%m-%d %H:%M:%S")+u" | "+sender+u" | "+text+"\n")
+            self.write_log(log_message)
+
+        #Игнорируем сообщения без маркера в групчате
+        if ((mtype == u"groupchat") and not( text[0] == u"#" )):
             return 0
 
-        #Удаляем маркеры
+
+
+
+        #Удаляем маркер, если есть
         if text[0] == u"#":
             text = text[1:]
-        if text[0:len(self.name)] == self.name:
-            try:
-                text = text.split(None,1)
-                text = text[1]
-            except:
-                pass
 
         #Разбиваем строку на первое слово и все остальное
         try:
             text=text.split(None,1)
         except:
             pass
+
+
         #Первое слово - это команда
         try:
             command = text[0]
         except:
             command = None
             return 0
+
         #Команду - в нижний регистр
         command = command.lower()
+
         #Пытаемся получить аргумент команды
         try:
             argument = text[1]
         except:
             argument = None
 
-        #Получаем список всех комманд
-        com = commandos.allcommands()
-
         #Ищем команду в списке, выполняем. Если нет - ничего не делаем.
-        for task in com.commands_list:
+        for task in commandos.commands_dict:
             if command == task:
                 #self.send(sender, u"Принята команда " + command,mtype)
                 #print sender
                 time.sleep(1)
-                function = com.commands_dict.get(command)
+                function = commandos.commands_dict.get(command)
                 #Проверяем функцию на вызываемость и вызываем её
                 if callable(function):
                     function(self,sender,argument,mtype)
