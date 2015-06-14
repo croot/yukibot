@@ -1,0 +1,1 @@
+Yuki-bot is a new jabber bot written with Python and xmpppy library.
